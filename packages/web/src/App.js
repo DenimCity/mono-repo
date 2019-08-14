@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import {add} from '@jean/common'
+console.log(add)
 function App() {
   return (
     <div className="App">
@@ -9,6 +10,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          {add(1,3)}
         </p>
         <a
           className="App-link"
