@@ -1,43 +1,26 @@
-import React, { useEffect, useReducer } from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {add} from "@wow/common"
 
 
-const INITIAL_STATE = {
-  loading: null,
-  rockets: []
-}
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'LOADING':
-      return {
-        ...state,
-        loading: true
-      }
-    case 'LOADING_COMPLETE':
-      return {
-        ...state,
-        ...action.payload,
-        loading: false
-      }
-  
-    default:
-     return state
-  }
-}
 function App() {
 
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
-  useEffect(() => {
+const [state, setState] =useState([])
 
-  },[])
+useEffect(() => {
+
+  fetch('http://localhost:4000/user')
+  .then(res => res.json())
+  .then(data => console.log(data))
   
+}, [])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {add(1, 5)}
         </p>
         <a
           className="App-link"

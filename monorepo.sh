@@ -1,7 +1,4 @@
- 
-mkdir packages
-mkdir common
-react-native init app mobile && create-react-app web
-touch .gitignore
-touch package.json
+rm -rf node_modules
+rm -rf packages/*/node_modules
+yarn install
 
